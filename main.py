@@ -1,3 +1,4 @@
+import os
 from random import randint
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -9,8 +10,21 @@ pathToChromeDriver = 'chromedriver.exe'
 
 
 # -----------------------------Login-------------------------------------------
-username = ''
-password = ''
+username = str(input('Digite seu username:\n'))
+password = str(input('Digite sua senha:\n'))
+
+os.system('cls' or 'clear')
+
+print("""Selecione o assessment:
+      [1] - Burnout
+      [2] - Estresse
+      [3] - Satisfação com a vida
+      [4] - Autoconsciência
+      [5] - Autoregulação""")
+
+choice = int(input('Digite o número do assessment: '))
+
+
 # -----------------------------------------------------------------------------
 
 options = webdriver.ChromeOptions()
@@ -24,14 +38,6 @@ driver.delete_all_cookies()
 # Ajuste no tempo de espera para o elemento ser encontrado em segundos
 wait = WebDriverWait(driver, 8)
 
-print("""Selecione o assessment:
-      [1] - Burnout
-      [2] - Estresse
-      [3] - Satisfação com a vida
-      [4] - Autoconsciência
-      [5] - Autoregulação""")
-
-choice = int(input('Digite o número do assessment: '))
 
 driver.get('https://mobile-dev.wayminder.com.br/login?returnPath=%2Fhome')
 
