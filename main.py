@@ -10,6 +10,10 @@ pathToChromeDriver = 'chromedriver.exe'
 
 
 # -----------------------------Login-------------------------------------------
+
+os.system('cls' or 'clear')
+
+
 username = str(input('Digite seu username:\n'))
 password = str(input('Digite sua senha:\n'))
 
